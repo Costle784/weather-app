@@ -1,9 +1,10 @@
 const React = require('react');
-const logo = require('../images/logo.svg')
+const logo = require('../images/logo.svg');
+const Main = require('./Main');
 
 const Header = () => {
   return(
-    <div>
+    <div className="header-container">
       <img src={logo} className="logo"/>
     </div>
   )
@@ -13,7 +14,10 @@ const Header = () => {
 class App extends React.Component {
   render() {
     return (
-      <Header />
+      <div className="container">
+        <Header />
+        <Main />
+      </div>
     )
   }
 }

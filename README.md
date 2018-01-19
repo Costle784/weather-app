@@ -4,8 +4,8 @@
 
 ## Built With...
 React
-NPM - package manager \n
-Webpack - Bundles all code to index_bundle.js \n
-Babel - transpiles ES6 and JSX to browser-compliant JS  \n
-CSS + Style loaders allow "require" of CSS files as modules \n
-Deployed to Firebase \n
+NPM - package manager <br />
+Webpack - Bundles all code to index_bundle.js <br />
+Babel - transpiles ES6 and JSX to browser-compliant JS  <br />
+CSS + Style loaders allow "require" of CSS files as modules <br />
+Deployed to Firebase <br />

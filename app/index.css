@@ -3,6 +3,29 @@ body {
   background-color: grey;
 }
 
+.container {
+  height:100vh;
+}
+
 .logo {
   width:20%;
+}
+
+.header-container {
+  padding:8px;
+  background-color:black;
+}
+
+.main-container {
+  height:100%;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.main {
+  display:flex;
+  flex-direction:column;
+  width:25%;
+  text-align:center;
 }
