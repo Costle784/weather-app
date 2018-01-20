@@ -33,6 +33,7 @@ body {
 
 .button {
   color: #FFF;
+  text-decoration: none;
   background: #005b96;
   border: none;
   font-size: 16px;

@@ -1,6 +1,11 @@
 const React = require('react');
+const ReactRouter = require('react-router-dom');
+const Router = ReactRouter.BrowserRouter;
+const Route = ReactRouter.Route;
+const Switch = ReactRouter.Switch;
 const logo = require('../images/logo.svg');
 const Location = require('./Location');
+const Forcast = require('./Forcast');
 
 const Header = () => {
   return(
@@ -14,10 +19,15 @@ const Header = () => {
 class App extends React.Component {
   render() {
     return (
-      <div className="container">
-        <Header />
-        <Location />
-      </div>
+      <Router>
+        <div className="container">
+          <Header />
+          <Switch>
+            <Route exact path='/' component={Location} />
+            <Route exact path='/forcast' component={Forcast} />
+          </Switch>
+        </div>
+      </Router>
     )
   }
 }

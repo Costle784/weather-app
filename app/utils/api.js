@@ -5,7 +5,7 @@ module.exports = {
   getWeather: function(zip) {
     let url = `http://api.openweathermap.org/data/2.5/weather?zip=${zip}&APPID=${key}`
     return axios.get(url).then((response) => {
-      console.log(response)
+      console.log(response.data)
     })
   }
 }

@@ -1,5 +1,5 @@
 const React = require('react');
-const api = require('../utils/api');
+const Link = require('react-router-dom').Link
 
 class Location extends React.Component {
   constructor() {
@@ -20,8 +20,9 @@ class Location extends React.Component {
     })
   }
   handleClick(e) {
-    e.preventDefault();
-    api.getWeather(this.state.zip)
+    if(!this.state.zip){
+      e.preventDefault()
+    }
   }
 
   render() {
@@ -33,20 +34,24 @@ class Location extends React.Component {
           </label>
           <input
             id='location'
-            placeholder='20817'
+            placeholder='ex. 20817'
             type='text'
             autoComplete='off'
             value={this.state.zip}
             onChange={this.handleChange}
             className="location-input"
           />
-          <button
+          <Link
             className='button'
             type='submit'
             disabled={!this.state.zip}
-            onClick={this.handleClick}>
+            to={{ pathname: '/forcast',
+                search: `zip=${this.state.zip}`
+            }}
+            onClick={this.handleClick}
+          >
             Submit
-          </button>
+          </Link>
         </div>
       </div>
     )
