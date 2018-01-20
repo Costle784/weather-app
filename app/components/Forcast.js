@@ -8,27 +8,63 @@ class Forcast extends React.Component {
     super()
     this.state = {
       currentTemp:0,
-      city:""
+      city:"",
+      icon:"",
+      fiveDay:[]
     }
   }
   componentDidMount() {
     let params = queryString.parse(this.props.location.search)
-    api.getWeather(params.zip).then((response) => {
+    api.getCurrentWeather(params.zip).then((response) => {
       let temp = helpers.toFahrenheit(response.main.temp);
       this.setState({
         city: response.name,
         currentTemp: temp,
         icon: response.weather[0].icon
       });
+    });
+
+    api.getFiveDay(params.zip).then((response) => {
+      this.setState({
+        fiveDay:response.list
+      })
     })
   }
   render() {
-
-    return(
+    let days = this.state.fiveDay;
+    console.log(days)
+    return (
       <div className='column'>
-        <h1 className='title'>{this.state.city}</h1>
-        <h2 className='title'>{this.state.currentTemp}&#176;</h2>
-        <img src={`http://openweathermap.org/img/w/${this.state.icon}.png`}></img>
+
+          <h1 className='title'>{this.state.city}</h1>
+          <div className='current-weather-container'>
+            <h2 className='temperature'>{this.state.currentTemp}&#176;</h2>
+            <img
+              src={`http://openweathermap.org/img/w/${this.state.icon}.png`}
+              className='weather-icon'
+            />
+          </div>
+
+          <div className='icon-container'>
+            {days.map((day, i) => {
+              let high = helpers.toFahrenheit(day.temp.max);
+              let low = helpers.toFahrenheit(day.temp.min);
+              let date = helpers.formatDate(day.dt);
+
+              return (
+                <div key={i} className='column'>
+                  <img
+                    src={`http://openweathermap.org/img/w/${day.weather[0].icon}.png`}
+                    className='weather-icon'>
+                  </img>
+                  <div className='date'>{date}</div>
+                  <div className='highlow'>High: {high}&#176;</div>
+                  <div className='highlow'>Low: {low}&#176;</div>
+                </div>
+              )
+            })}
+
+          </div>
       </div>
     )
   }

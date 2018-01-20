@@ -1,6 +1,8 @@
 body {
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
   background-color: #b3cde0;
+  color:#FFF;
+  font-weight:200;
 }
 
 .container {
@@ -22,17 +24,17 @@ body {
   flex-grow:1;
   display:flex;
   align-items: center;
+  margin:0 auto;
 }
 
 .column {
   display:flex;
   flex-direction:column;
   align-items:center;
-  margin:0 auto;
 }
 
 .button {
-  color: #FFF;
+  color:#FFF;
   text-decoration: none;
   background: #005b96;
   border: none;
@@ -65,4 +67,44 @@ body {
   font-size: 3em;
   font-weight: 200;
   margin: 15px 0
+}
+
+.current-weather-container {
+  display:flex;
+}
+
+.temperature {
+  color: #FFF;
+  font-size:2.5em;
+  font-weight:200;
+  margin:15px 0;
+  padding:10px;
+}
+
+.weather-icon {
+  width:100px;
+  height:100px;
+}
+
+.icon-container {
+  display:flex;
+  justify-content:space-around;
+  width:80%;
+  flex-wrap:wrap;
+  margin:40px;
+}
+
+.day-container {
+  display:flex;
+  flex-direction:column;
+}
+
+.date {
+  color:#005b96;
+  font-size:1.5em;
+  padding:5px;
+}
+
+.highlow {
+  color:#005b96;
 }
