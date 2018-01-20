@@ -28,8 +28,8 @@ class Location extends React.Component {
   render() {
     return (
       <div className='location-container'>
-        <div className='location'>
-          <label htmlFor='location' className='location-label'>
+        <div className='column'>
+          <label htmlFor='location' className='title'>
             Enter a Zip Code
           </label>
           <input

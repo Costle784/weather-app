@@ -24,7 +24,7 @@ body {
   align-items: center;
 }
 
-.location {
+.column {
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -60,7 +60,7 @@ body {
   width: 75%;
 }
 
-.location-label {
+.title {
   color: #FFF;
   font-size: 3em;
   font-weight: 200;
