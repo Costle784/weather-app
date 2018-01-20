@@ -1,6 +1,6 @@
 const React = require('react');
 const logo = require('../images/logo.svg');
-const Main = require('./Main');
+const Location = require('./Location');
 
 const Header = () => {
   return(
@@ -16,7 +16,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <Header />
-        <Main />
+        <Location />
       </div>
     )
   }

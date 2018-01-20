@@ -1,11 +1,11 @@
 const React = require('react');
 
-class Main extends React.Component {
+class Location extends React.Component {
   render() {
     return (
-      <div className='main-container'>
-        <div className='main'>
-          <label htmlFor='location'>
+      <div className='location-container'>
+        <div className='location'>
+          <label htmlFor='location' className='location-label'>
             Enter a City and State
           </label>
           <input
@@ -15,6 +15,7 @@ class Main extends React.Component {
             autoComplete='off'
             // value={this.state.username}
             // onChange={this.handleChange}
+            className="location-input"
           />
           <button
             className='button'
@@ -29,4 +30,4 @@ class Main extends React.Component {
   }
 }
 
-module.exports = Main;
+module.exports = Location;
