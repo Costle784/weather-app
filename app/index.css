@@ -64,7 +64,6 @@ body {
 
 .title {
   font-size: 3em;
-  font-weight: 200;
   margin: 15px 0
 }
 
@@ -76,7 +75,6 @@ body {
 
 .temperature {
   font-size:2.5em;
-  font-weight:200;
   margin:15px 0;
   padding:10px;
 }
@@ -106,6 +104,16 @@ body {
 
 .description {
   text-align:center;
-  font-weight:200;
   font-size:1.5em;
+}
+
+.loading {
+  font-size:3em;
+  text-align:center;
+}
+
+.reset {
+  color:red;
+  font-size:1.5em;
+  text-decoration: none;
 }

@@ -5,7 +5,8 @@ const Route = ReactRouter.Route;
 const Switch = ReactRouter.Switch;
 const logo = require('../images/logo.svg');
 const Location = require('./Location');
-const Forcast = require('./Forcast');
+const Forecast = require('./Forecast');
+
 
 const Header = () => {
   return(
@@ -15,7 +16,6 @@ const Header = () => {
   )
 }
 
-
 class App extends React.Component {
   render() {
     return (
@@ -24,7 +24,10 @@ class App extends React.Component {
           <Header />
           <Switch>
             <Route exact path='/' component={Location} />
-            <Route exact path='/forcast' component={Forcast} />
+            <Route exact path='/forecast' component={Forecast} />
+            <Route render={ () => {
+              return <p>Not Found</p>
+            }} />
           </Switch>
         </div>
       </Router>

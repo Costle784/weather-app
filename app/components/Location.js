@@ -10,15 +10,14 @@ class Location extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
+
   handleChange(event) {
     var value = event.target.value;
-
-    this.setState(function() {
-      return {
-        zip:value
-      }
+    this.setState({
+      zip:value
     })
   }
+
   handleClick(e) {
     if(!this.state.zip){
       e.preventDefault()
@@ -45,7 +44,7 @@ class Location extends React.Component {
             className='button'
             type='submit'
             disabled={!this.state.zip}
-            to={{ pathname: '/forcast',
+            to={{ pathname: '/forecast',
                 search: `zip=${this.state.zip}`
             }}
             onClick={this.handleClick}
