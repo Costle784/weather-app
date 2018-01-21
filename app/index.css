@@ -63,7 +63,6 @@ body {
 }
 
 .title {
-  color: #FFF;
   font-size: 3em;
   font-weight: 200;
   margin: 15px 0
@@ -71,10 +70,11 @@ body {
 
 .current-weather-container {
   display:flex;
+  min-height:80px;
+  max-height:18%;
 }
 
 .temperature {
-  color: #FFF;
   font-size:2.5em;
   font-weight:200;
   margin:15px 0;
@@ -94,11 +94,6 @@ body {
   margin:40px;
 }
 
-.day-container {
-  display:flex;
-  flex-direction:column;
-}
-
 .date {
   color:#005b96;
   font-size:1.5em;
@@ -107,4 +102,10 @@ body {
 
 .highlow {
   color:#005b96;
+}
+
+.description {
+  text-align:center;
+  font-weight:200;
+  font-size:1.5em;
 }

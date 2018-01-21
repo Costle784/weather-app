@@ -20,7 +20,8 @@ class Forcast extends React.Component {
       this.setState({
         city: response.name,
         currentTemp: temp,
-        icon: response.weather[0].icon
+        icon: response.weather[0].icon,
+        description: response.weather[0].description
       });
     });
 
@@ -32,18 +33,21 @@ class Forcast extends React.Component {
   }
   render() {
     let days = this.state.fiveDay;
-    console.log(days)
+
     return (
       <div className='column'>
-
-          <h1 className='title'>{this.state.city}</h1>
+        <h1 className='title'>{this.state.city}</h1>
           <div className='current-weather-container'>
             <h2 className='temperature'>{this.state.currentTemp}&#176;</h2>
-            <img
-              src={`http://openweathermap.org/img/w/${this.state.icon}.png`}
-              className='weather-icon'
-            />
+              <img
+                src={`http://openweathermap.org/img/w/${this.state.icon}.png`}
+                alt={`${this.state.description} weather icon`}
+                className='weather-icon'
+              />
+
           </div>
+          <div className='description'>{this.state.description}</div>
+
 
           <div className='icon-container'>
             {days.map((day, i) => {
@@ -55,7 +59,8 @@ class Forcast extends React.Component {
                 <div key={i} className='column'>
                   <img
                     src={`http://openweathermap.org/img/w/${day.weather[0].icon}.png`}
-                    className='weather-icon'>
+                    className='weather-icon'
+                    alt={`${day.weather[0].description} weather icon`}>
                   </img>
                   <div className='date'>{date}</div>
                   <div className='highlow'>High: {high}&#176;</div>
