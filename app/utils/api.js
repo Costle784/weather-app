@@ -1,6 +1,5 @@
 const axios = require('axios');
 const key = 'b87ef13e00bc9136960cd7c0541a91b3'
-const Forecast = require('../components/Forecast');
 
 module.exports = {
   getCurrentWeather: function(zip) {

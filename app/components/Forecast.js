@@ -75,8 +75,6 @@ class Forecast extends React.Component {
   }
 
   render() {
-
-
     return (
       this.state.error ? <Err /> :
 

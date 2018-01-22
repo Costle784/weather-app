@@ -23,7 +23,6 @@ class Location extends React.Component {
   }
 
   handleClick(e) {
-
     if(!this.state.zip){
       e.preventDefault()
     }
