@@ -1,11 +1,15 @@
 const axios = require('axios');
 const key = 'b87ef13e00bc9136960cd7c0541a91b3'
+const Forecast = require('../components/Forecast');
 
 module.exports = {
   getCurrentWeather: function(zip) {
     let url = `http://api.openweathermap.org/data/2.5/weather?zip=${zip}&APPID=${key}`
     return axios.get(url).then((response) => {
       return response.data
+    })
+    .catch((error) => {
+      return error.toString()
     })
   },
   getFiveDay: function(zip) {

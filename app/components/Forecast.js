@@ -5,6 +5,7 @@ const helpers = require('../utils/helpers');
 const Loading = require('./Loading');
 const Link = require('react-router-dom').Link;
 const PropTypes = require('prop-types');
+const Err = require('./Err');
 
 const FiveDayForecast = (props) => {
   return (
@@ -42,7 +43,8 @@ class Forecast extends React.Component {
       currentTemp:0,
       city:"",
       icon:"",
-      fiveDay:[]
+      fiveDay:[],
+      error:false
     }
   }
 
@@ -50,13 +52,19 @@ class Forecast extends React.Component {
     let params = queryString.parse(this.props.location.search)
 
     api.getCurrentWeather(params.zip).then((response) => {
+      if(typeof response === 'string') {
+        this.setState({
+          error:true
+        })
+      } else {
       let temp = helpers.toFahrenheit(response.main.temp);
-      this.setState({
-        city: response.name,
-        currentTemp: temp,
-        icon: response.weather[0].icon,
-        description: response.weather[0].description
-      });
+        this.setState({
+          city: response.name,
+          currentTemp: temp,
+          icon: response.weather[0].icon,
+          description: response.weather[0].description
+        });
+      }
     });
 
     api.getFiveDay(params.zip).then((response) => {
@@ -67,7 +75,11 @@ class Forecast extends React.Component {
   }
 
   render() {
+
+
     return (
+      this.state.error ? <Err /> :
+
       this.state.fiveDay.length === 0 ? <Loading /> :
       <div className='column'>
         <h1 className='title'>{this.state.city}</h1>

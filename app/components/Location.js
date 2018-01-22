@@ -11,6 +11,10 @@ class Location extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentDidMount(){
+    this.nameInput.focus();
+  }
+
   handleChange(event) {
     var value = event.target.value;
     this.setState({
@@ -19,6 +23,7 @@ class Location extends React.Component {
   }
 
   handleClick(e) {
+
     if(!this.state.zip){
       e.preventDefault()
     }
@@ -32,6 +37,7 @@ class Location extends React.Component {
             Enter a Zip Code
           </label>
           <input
+            ref={(input) => { this.nameInput = input; }}
             id='location'
             placeholder='ex. 20817'
             type='text'

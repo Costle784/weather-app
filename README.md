@@ -2,7 +2,7 @@
 Welcome to the NETE Weather App!
 
 ## Built With...
-React
+React <br />
 NPM - package manager <br />
 Webpack - Bundles all code to index_bundle.js <br />
 Babel - transpiles ES6 and JSX to browser-compliant JS  <br />
@@ -12,8 +12,7 @@ Other packages used include: react-router-dom (routing), axios (AJAX requests), 
 
 With More time i'd include... <br />
 
--Error handling <br />
+-improved error handling <br />
 -A 'show' page for each day in 5-day Forecast<br />
 -Zip code validation<br />
--better weather icons<br />
--improved responsive design<br />
+-prettier weather icons<br />
