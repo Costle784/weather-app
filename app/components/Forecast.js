@@ -18,7 +18,7 @@ const FiveDayForecast = (props) => {
         return (
           <div key={i} className='column'>
             <img
-              src={`http://openweathermap.org/img/w/${day.weather[0].icon}.png`}
+              src={`https://openweathermap.org/img/w/${day.weather[0].icon}.png`}
               className='weather-icon'
               alt={`${day.weather[0].description} weather icon`}>
             </img>
@@ -84,7 +84,7 @@ class Forecast extends React.Component {
           <div className='current-weather-container'>
             <h2 className='temperature'>{this.state.currentTemp}&#176;</h2>
               <img
-                src={`http://openweathermap.org/img/w/${this.state.icon}.png`}
+                src={`https://openweathermap.org/img/w/${this.state.icon}.png`}
                 alt={`${this.state.description} weather icon`}
                 className='weather-icon'
               />
