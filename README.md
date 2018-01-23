@@ -1,5 +1,6 @@
 # weatherapp-nete
 Welcome to the NETE Weather App!
+Visit app at https://weatherapp-nete.firebaseapp.com
 
 ## Built With...
 React <br />
