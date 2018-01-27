@@ -3,7 +3,7 @@ const ReactRouter = require('react-router-dom');
 const Router = ReactRouter.BrowserRouter;
 const Route = ReactRouter.Route;
 const Switch = ReactRouter.Switch;
-const logo = require('../images/logo.svg');
+const logo = require('../images/logo.png');
 const Location = require('./Location');
 const Forecast = require('./Forecast');
 
