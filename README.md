@@ -1,5 +1,5 @@
-# weatherapp-nete
-Welcome to the NETE Weather App!
+# weather-app
+Welcome to the absolute consumate Weather App!
 Visit app at https://weatherapp-nete.firebaseapp.com
 
 ## Built With...
